@@ -3,6 +3,8 @@
 移动端交互图：[Modao](https://modao.cc/app/99bed6c633b3f1f3cb33b7f83a1333b0901fb24d)
 CMS交互图：[Modao](https://modao.cc/app/0ef470dc6f2fdaf213f5134af1a5e0661e6ee8ff)
 
+服务器：139.129.211.175 Yrs20160504
+
 ## Action
 * 图片大小未确定，全是示例，需要开发给建议
 * 升级用第三方，所以不需要api。
