@@ -8,7 +8,7 @@ exports.refresh = function refreshToken() {
         let token = jwt.sign({
             id: this.state.user.id,
             role: this.state.user.role
-        }, CONFIG.secret, {expiresIn: CONFIG.expiresIn});
+        }, CONFIG.jwt.secret, {expiresIn: CONFIG.jwt.expiresIn});
         this.set('Authorization', 'Bearer ' + token);
     }
 };
