@@ -1,5 +1,5 @@
 /**
- * Routes for client.
+ * Routes for rabate.
  */
 
 'use strict';
