@@ -22,27 +22,27 @@ response: {
     "banners": [ // 3-6个不等
 	{
 	    "pic": "http://placehold.it/350x150/00ff00/ffffff",
-            "type": "video", // 最近两期视频，直播剪辑版（也是视频）
+            "bannerType": "video", // 最近两期视频，直播剪辑版（也是视频）
             "title": "【肤若凝脂】一言不合就变白,美白大法来也",
-            "id": "5705c240f648e134dc8d2a0d" // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "videoId": "5705c240f648e134dc8d2a0d" // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
 	    },
         {
             "pic": "http://placehold.it/350x150/00ff00/ffffff",
-            "type": "video", // 同上
+            "bannerType": "video", // 同上
             "title": "【肤若凝脂】一言不合就变白,美白大法来也",
-            "id": "5705c240f648e134dc8d2a01" // 同上
+            "videoId": "5705c240f648e134dc8d2a01" // 同上
         },
         {
             "pic": "http://placehold.it/350x150/0000ff/ffffff",
-            "type": "rebate", // 进入返利页面
+            "bannerType": "rebate", // 进入返利页面
         },
 	    {
 	        "pic": "http://placehold.it/350x150/ffff00/ffffff",
-	        "type": "live" // 直播预告，进入直播页面
+	        "bannerType": "live" // 直播预告，进入直播页面
 	    },
         {
             "pic": "http://placehold.it/350x150/ff00ff/ffffff",
-            "type": "ad", // 广告，进入内置webview
+            "bannerType": "ad", // 广告，进入内置webview
             "url": "http://www.baidu.com"
         }
     ],
@@ -88,56 +88,56 @@ response: {
     ],
     "topics": [ // 专题
         {
-            "id": 001, //数字
+            "sequence": 001, //数字
             "header": {
                 "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片一定有
                 "video": "http://techslides.com/demos/sample-videos/small.mp4", // 视频可能没有,如果没有就不显示播放按钮
             },
             "videos": [
                 {               
-                    "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+                    "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
                     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
                     "like": 18460, // 想做的数量
                     "title": "【肤若凝脂】一言不合就变白,美白大法来也"
                 },
                 {               
-                    "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+                    "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
                     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片 
                     "like": 18460, // 想做的数量
                     "title": "【基础知识】整容,你的医生医院选对了么?"
                 },
                 {               
-                    "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+                    "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
                     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
                     "like": 18460, // 想做的数量
                     "title": "【肤若凝脂】一言不合就变白,美白大法来也"
                 },
                 {               
-                    "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+                    "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
                     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
                     "like": 18460, // 想做的数量
                     "title": "【基础知识】整容,你的医生医院选对了么?"
                 },
                 {               
-                    "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+                    "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
                     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
                     "like": 18460, // 想做的数量
                     "title": "【肤若凝脂】一言不合就变白,美白大法来也"
                 },
                 {               
-                    "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+                    "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
                     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
                     "like": 18460, // 想做的数量
                     "title": "【基础知识】整容,你的医生医院选对了么?"
                 },
                 {               
-                    "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+                    "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
                     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
                     "like": 18460, // 想做的数量
                     "title": "【肤若凝脂】一言不合就变白,美白大法来也"
                 },
                 {               
-                    "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+                    "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
                     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
                     "like": 18460, // 想做的数量
                     "title": "【基础知识】整容,你的医生医院选对了么?"
@@ -156,13 +156,13 @@ GET /more?topic=1 // topic为用户当前所选专题
 
 response:[ //大概10-15个
     {               
-        "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+        "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
         "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
         "like": 18460, // 想做的数量
         "title": "【肤若凝脂】一言不合就变白,美白大法来也"
     },
     {               
-        "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+        "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
         "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
         "like": 18460, // 想做的数量
         "title": "【基础知识】整容,你的医生医院选对了么?"
@@ -177,13 +177,13 @@ response:[ //大概10-15个
 GET /video/:id 
 
 response: {
-    "id": "id",
+    "_id": "id",
     "url": "http://techslides.com/demos/sample-videos/small.mp4", // 视频链接
     "pic": "http://placehold.it/350x150/0000ff/ffffff", // 图片
     "title": "【面部雕塑】整形从鼻子开始,一鼻擎天我最美", // 标题
     "like": 18460, // 想做的数量
     "doctor":{
-        "id":"id",
+        "_id":"id",
         "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
         "name": "周敏如",
         "nick": "美鼻王子", // 行业外号
@@ -191,13 +191,13 @@ response: {
     },
     "related": [ // 相关视频 0-5个,可能没有
         {               
-            "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
             "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
             "like": 18460, // 想做的数量
             "title": "【肤若凝脂】一言不合就变白,美白大法来也"
         },
         {               
-            "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
             "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
             "like": 18460, // 想做的数量
             "title": "【基础知识】整容,你的医生医院选对了么?"
@@ -207,12 +207,10 @@ response: {
 }
 
 # 点击用户想做
-POST /video/:id/like 
-
-body: {
-    user: "13912345678", // 如果用户已登录,请上传手机号。
-    token: "token" // TODO: 待改动,用JWT的话,如果用户登录,需要传用户token
-}
+POST /video/:id/like
+ 
+header://request的header
+    Authorization: token//用户token
 
 response: {} // 返回结果同上面GET /video/:id ,前端逻辑可以直接在前端+1,不用依靠后端返回值。
 ```
@@ -223,7 +221,7 @@ response: {} // 返回结果同上面GET /video/:id ,前端逻辑可以直接在
 GET /doctor/:id
 
 response:{
-    "id":"id",
+    "_id":"id",
     "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
     "name": "周敏如",
     "nick": "美鼻王子", // 行业外号
@@ -236,13 +234,13 @@ response:{
     "rebate": true, // 有些医生能谈下返利，有些不同，返利具体数额视医生决定
     "related": [ // 相关视频 0-5个,可能没有
         {               
-            "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
             "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
             "like": 18460, // 想做的数量
             "title": "【肤若凝脂】一言不合就变白,美白大法来也"
         },
         {               
-            "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
             "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
             "like": 18460, // 想做的数量
             "title": "【基础知识】整容,你的医生医院选对了么?"
@@ -262,7 +260,7 @@ POST /search?word=xxx
 response: {
     doctors: [
         {
-            "id":"id",
+            "_id":"id",
             "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
             "name": "周敏如",
             "nick": "美鼻王子", // 行业外号
@@ -270,7 +268,7 @@ response: {
             "speciality": ["隆鼻","鼻尖整形","鼻尖综合","希腊鼻","鹰钩鼻"],
         },
         {
-            "id":"id",
+            "_id":"id",
             "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
             "name": "周敏如",
             "nick": "美鼻王子", // 行业外号
@@ -278,7 +276,7 @@ response: {
             "speciality": ["隆鼻","鼻尖整形","鼻尖综合","希腊鼻","鹰钩鼻"],
         },
         {
-            "id":"id",
+            "_id":"id",
             "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
             "name": "周敏如",
             "nick": "美鼻王子", // 行业外号
@@ -288,13 +286,13 @@ response: {
     ],
     videos: [
         {
-            "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
             "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
             "like": 18460, // 想做的数量
             "title": "【肤若凝脂】一言不合就变白,美白大法来也"
         },
         {
-            "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
             "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
             "like": 18460, // 想做的数量
             "title": "【基础知识】整容,你的医生医院选对了么?"
@@ -309,13 +307,13 @@ response: {
 POST /search?category=xxx
 response: [
     {
-        "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+        "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
         "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
         "like": 18460, // 想做的数量
         "title": "【肤若凝脂】一言不合就变白,美白大法来也"
     },
     {
-        "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+        "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
         "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
         "like": 18460, // 想做的数量
         "title": "【基础知识】整容,你的医生医院选对了么?"
@@ -329,7 +327,7 @@ response: [
 GET /doctors
 response: [ // 大概20个左右
     {
-        "id":"id",
+        "_id":"id",
         "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
         "name": "周敏如",
         "nick": "美鼻王子", // 行业外号
@@ -337,7 +335,7 @@ response: [ // 大概20个左右
         "speciality": ["隆鼻","鼻尖整形","鼻尖综合","希腊鼻","鹰钩鼻"],
     },
     {
-        "id":"id",
+        "_id":"id",
         "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
         "name": "周敏如",
         "nick": "美鼻王子", // 行业外号
@@ -345,7 +343,7 @@ response: [ // 大概20个左右
         "speciality": ["隆鼻","鼻尖整形","鼻尖综合","希腊鼻","鹰钩鼻"],
     },
     {
-        "id":"id",
+        "_id":"id",
         "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
         "name": "周敏如",
         "nick": "美鼻王子", // 行业外号
@@ -361,13 +359,13 @@ response: [ // 大概20个左右
 GET /live
 response: {
     "next": {
-        "id": "id",
+        "_id": "id",
         "pic": "http://placehold.it/350x150/00ff00/ffffff",
         "url": "第三方直播链接", // 根据链接打开web浏览器,
         "title": "baby之欧式大双,汝等之肚脐眼儿?",
         "like": 463422, // 想看人数
         "doctor":{
-            "id":"id",
+            "_id":"id",
             "avatar": "http://placehold.it/80x100/0000ff/ffffff", // 头像
             "name": "周敏如",
             "nick": "美鼻王子", // 行业外号
@@ -376,13 +374,13 @@ response: {
     },
     "preview": [
         {
-            "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
             "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
             "like": 18460, // 想做的数量
             "title": "【肤若凝脂】一言不合就变白,美白大法来也"
         },
         {
-            "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
+            "_id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
             "pic": "http://placehold.it/350x150/0000ff/ffffff", // 显示图片
             "like": 18460, // 想做的数量
             "title": "【肤若凝脂】一言不合就变白,美白大法来也"
@@ -393,10 +391,8 @@ response: {
 # 点击用户想做
 POST /live/:id/like 
 
-body: {
-    user: "13912345678", // 如果用户已登录,请上传手机号。
-    token: "token" // TODO: 待改动,用JWT的话,如果用户登录,需要传用户token
-}
+header://request的header
+    Authorization: token//用户token
 
 response: {} // 返回结果同上面GET /live,前端逻辑可以直接在前端+1,不用依靠后端返回值。
 ```
@@ -427,7 +423,11 @@ response: {
 
 POST /login?phone=13912345678&code=1234
 body: {}
-response: { // JWT Token
+
+header://response的header
+    Authorization: token//这个是在response的header里的，客户端拿到请记录到本地，
+
+response: { 
     "status": "ok", // or "error"
     "message": ""
 }  
