@@ -1,0 +1,47 @@
+{
+  "name": "nabemehz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "service.js",
+  "scripts": {
+    "devl": "NODE_ENV=development nodemon service.js",
+    "prod": "NODE_ENV=production node service.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:producesry/nabemehz.git"
+  },
+  "keywords": [
+    "node",
+    "koa",
+    "mongo"
+  ],
+  "contributors": [
+    {
+      "name": "Daniel Li",
+      "email": "libook7@gmail.com",
+      "url": "https://github.com/libook"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/producesry/nabemehz/issues"
+  },
+  "private": true,
+  "homepage": "https://github.com/producesry/nabemehz",
+  "dependencies": {
+    "deep-freeze-strict": "^1.1.1",
+    "extend": "^3.0.0",
+    "kcors": "^1.2.1",
+    "koa": "^1.2.1",
+    "koa-bodyparser": "^2.2.0",
+    "koa-jwt": "^1.2.0",
+    "koa-logger": "^1.3.0",
+    "koa-router": "^5.4.0",
+    "lodash": "^4.14.1",
+    "moment": "^2.14.1",
+    "mongoose": "^4.5.8",
+    "request": "^2.74.0",
+    "require-dir": "^0.3.0",
+    "topSdk": "git+https://github.com/guanghetv/topSdk-Node.git#0.0.1"
+  }
+}
