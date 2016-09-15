@@ -27,6 +27,6 @@ let bannerSchema = new Schema({
     "video": ObjectId//视频地址
 });
 
-mongoose.model('Banner', bannerSchema);
+global.MODEL.Banner = mongoose.model('Banner', bannerSchema);
 
 module.exports = bannerSchema;

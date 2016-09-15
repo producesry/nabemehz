@@ -40,6 +40,6 @@ let liveSchema = new Schema({
     ]
 });
 
-mongoose.model('Live', liveSchema);
+global.MODEL.Live = mongoose.model('Live', liveSchema);
 
 module.exports = liveSchema;

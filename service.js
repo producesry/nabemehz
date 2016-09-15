@@ -42,6 +42,7 @@ mongoose.connection.on('connected', () => {
     /**
      * Init models.
      */
+    global.MODEL = {};
     requireDir('./models', {recurse: true});
 
     /**

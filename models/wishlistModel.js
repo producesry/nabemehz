@@ -23,6 +23,6 @@ let wishlistSchema = new Schema({
     "wishId": ObjectId
 });
 
-mongoose.model('Wishlist', wishlistSchema);
+global.MODEL.Wishlist = mongoose.model('Wishlist', wishlistSchema);
 
 module.exports = wishlistSchema;

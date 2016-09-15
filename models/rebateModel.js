@@ -29,6 +29,6 @@ let rebateSchema = new Schema({
     "after": String//整形后图片地址
 });
 
-mongoose.model('Rebate', rebateSchema);
+global.MODEL.Rebate = mongoose.model('Rebate', rebateSchema);
 
 module.exports = rebateSchema;

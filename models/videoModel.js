@@ -28,6 +28,6 @@ let videoSchema = new Schema({
     ]
 });
 
-mongoose.model('Video', videoSchema);
+global.MODEL.Video = mongoose.model('Video', videoSchema);
 
 module.exports = videoSchema;

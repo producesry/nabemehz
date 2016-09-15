@@ -19,6 +19,6 @@ let hotSchema = new Schema({
     }]
 });
 
-mongoose.model('Hot', hotSchema);
+global.MODEL.Hot = mongoose.model('Hot', hotSchema);
 
 module.exports = hotSchema;

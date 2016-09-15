@@ -15,6 +15,6 @@ let categorySchema = new Schema({
     "name": String//显示文字
 });
 
-mongoose.model('Category', categorySchema);
+global.MODEL.Category = mongoose.model('Category', categorySchema);
 
 module.exports = categorySchema;

@@ -22,6 +22,6 @@ let labelSchema = new Schema({
     "name": String//标签名
 });
 
-mongoose.model('Label', labelSchema);
+global.MODEL.Label = mongoose.model('Label', labelSchema);
 
 module.exports = labelSchema;

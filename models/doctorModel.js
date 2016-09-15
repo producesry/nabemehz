@@ -34,6 +34,6 @@ let doctorSchema = new Schema({
     ]
 });
 
-mongoose.model('Doctor', doctorSchema);
+global.MODEL.Doctor = mongoose.model('Doctor', doctorSchema);
 
 module.exports = doctorSchema;

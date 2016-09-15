@@ -22,6 +22,6 @@ let userSchema = new Schema({
     }
 });
 
-mongoose.model('User', userSchema);
+global.MODEL.User = mongoose.model('User', userSchema);
 
 module.exports = userSchema;
