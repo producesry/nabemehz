@@ -5,7 +5,10 @@ const jwt = require('koa-jwt');
 exports.refresh = function refreshToken() {
     return function *(next) {
         yield next;
-        let token = jwt.sign(this.state.user, CONFIG.secret, {expiresIn: CONFIG.expiresIn});
+        let token = jwt.sign({
+            id: this.state.user.id,
+            role: this.state.user.role
+        }, CONFIG.secret, {expiresIn: CONFIG.expiresIn});
         this.set('Authorization', 'Bearer ' + token);
     }
 };
