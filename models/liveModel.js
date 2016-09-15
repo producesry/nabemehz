@@ -13,6 +13,12 @@ const ObjectId = Schema.Types.ObjectId;
 
 let liveSchema = new Schema({
     "next": {
+        "_id": {
+            "type": ObjectId,
+            "default": function () {
+                return new ObjectId()
+            }
+        },
         "pic": String,//图片地址
         "url": String,//"第三方直播链接",根据链接打开web浏览器,
         "title": String,//标题

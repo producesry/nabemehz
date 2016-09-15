@@ -388,7 +388,7 @@ response: {
     ]
 }
 
-# 点击用户想做
+# 点击用户想看// TODO: PRD中没有这个按钮，需要添加
 POST /live/:id/like 
 
 header://request的header
@@ -437,4 +437,6 @@ response: {
 ```
 ## 后台API
 // TODO: 还没做完
+
+// TODO: 直播页面添加选择直播医生的配置项
  
