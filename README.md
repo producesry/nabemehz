@@ -1,7 +1,7 @@
 # nabemehz
 
-移动端交互图：[Modao](https://modao.cc/app/99bed6c633b3f1f3cb33b7f83a1333b0901fb24d)
-CMS交互图：[Modao](https://modao.cc/app/0ef470dc6f2fdaf213f5134af1a5e0661e6ee8ff)
+移动端交互图：[Modao](https://modao.cc/app/4f53762a751f4fed80f093078c01645a38447f5e)
+CMS交互图：[Modao](https://modao.cc/app/b1f37e8fabf352c06603dc6d50d9531b144eea57)
 
 服务器：139.129.211.175 Yrs20160504
 
@@ -44,7 +44,7 @@ response: {
             "pic": "http://placehold.it/350x150/ff00ff/ffffff",
             "type": "ad", // 广告，进入内置webview
             "url": "http://www.baidu.com"
-        },
+        }
     ],
     "search": {
         "hot": {
@@ -142,7 +142,7 @@ response: {
                     "like": 18460, // 想做的数量
                     "title": "【基础知识】整容,你的医生医院选对了么?"
                 }
-            ],
+            ]
         }
     ],
 }
@@ -233,6 +233,7 @@ response:{
     "address": "北京市东城区王府井帅府园1号", // 医院地址
     "experience": "“美鼻王子”，国内最著名的鼻部权威专家之一。中国整形美容协会会员，不辣不辣不辣不辣不辣吹上天。。。", // 执业经历
     "speciality": ["隆鼻","鼻尖整形","鼻尖综合","希腊鼻","鹰钩鼻"],
+    "rebate": true, // 有些医生能谈下返利，有些不同，返利具体数额视医生决定
     "related": [ // 相关视频 0-5个,可能没有
         {               
             "id": "5705c240f648e134dc8d2a0d", // 见视频请求，http://domain/api/v1/video/5705c240f648e134dc8d2a0d
