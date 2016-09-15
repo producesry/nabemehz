@@ -404,7 +404,10 @@ POST /rebate/ticket
 POST /rebate/before
 POST /rebate/after
 
-response: { // JWT Token
+header://request的header
+    Authorization: token//用户token
+
+response: {
     "status": "ok", // or "error"
     "message": ""
 }
