@@ -26,10 +26,10 @@ const router = new Router();
 
 /**
  * 搜索内容
- * POST /search
+ * POST /search/word/:word
  * Request:
- *      Query String:
- *          word = String //搜索的关键词，目前只支持单个关键词
+ *      Param:
+ *          word String //搜索的关键词，目前只支持单个关键词
  * Response:
  *      Body:
  *          {
@@ -41,16 +41,37 @@ const router = new Router();
  *              ]
  *          }
  */
-router.post('search', function *() {
+router.post('search/word/:word', function *() {
     this.body = {
         "doctors": yield MODEL.Doctor.find({
             "$or": [
-                {"name": this.request.query.word},
-                {"speciality": this.request.query.word}
+                {"name": this.params.word},
+                {"speciality": this.params.word}
             ]
         }),
-        "videos": yield MODEL.Video.find({"label": this.request.query.word})
+        "videos": yield MODEL.Video.find({"label": this.params.word})
     };
+});
+
+/**
+ * 查找项目
+ * POST /search/category/:category
+ * Request:
+ *      Param:
+ *          category String //项目关键词，目前只支持单个关键词
+ * Response:
+ *      Body:
+ *          [
+ *              {Video Object}
+ *          ]
+ */
+router.post('search/category/:category', function *() {
+    let category = yield MODEL.Category.findOne({"name": this.params.category});
+    if (category == null) {
+        this.body = [];
+    } else {
+        this.body = yield MODEL.Video.find({"label": {"$in": category.label}});
+    }
 });
 
 /**
