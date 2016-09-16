@@ -16,7 +16,7 @@ let vcodeSchema = new Schema({
         "type": String,
         "default": function () {
             let code = '';
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < CONFIG.vcode.codeLength; i++) {
                 code += Math.floor(Math.random() * 10);
             }
             return code;

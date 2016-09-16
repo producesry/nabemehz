@@ -36,6 +36,7 @@ let configSchema = new Schema({
     "vcode": {
         "effectiveTime": Number,//The effective time of verification code in millisecond.
         "resendInterval": Number,//The resend interval time of verification code in millisecond.
+        "codeLength": Number,//The length of code.
     }
 }, {strict: false});
 
