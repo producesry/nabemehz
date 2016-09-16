@@ -58,7 +58,7 @@ router.use(require('./rabateRoutes').routes());
  */
 router.post('login', tokenMidw.refresh(), function*() {
     let result = MODEL.Vcode.findOne({"phone": this.request.query.phone, "code": this.request.query.code});
-    if (false && result == null) {
+    if (result == null) {
         this.body = {
             "status": "error",
             "message": "验证码错误"
