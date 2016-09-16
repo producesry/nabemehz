@@ -79,6 +79,23 @@ router.get('main', function *() {
 });
 
 /**
+ * 获取首页下方用户可能感兴趣的视频
+ * GET /more
+ * Request:
+ *      Query String:
+ *          topic = String //选定主题的_id
+ * Response:
+ *      Body:
+ *          [
+ *              {Video Object}
+ *          ]
+ */
+router.get('more', function *() {
+    let topic = yield MODEL.Topic.findOne({"_id": this.request.query.topic}).populate("videos");
+    this.body = topic.videos;
+});
+
+/**
  * 获取验证码
  * POST /vcode
  * Request:
