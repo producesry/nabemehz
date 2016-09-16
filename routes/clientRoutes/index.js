@@ -63,6 +63,9 @@ router.use(require('./rabateRoutes').routes());
  *              }
  *              "categories": [
  *                  {Category Object}
+ *              ],
+ *              "topics": [
+ *                  {Topic Object}
  *              ]
  *          }
  */
@@ -70,7 +73,8 @@ router.get('main', function *() {
     this.body = {
         "banners": yield MODEL.Banner.find(),
         "search": yield MODEL.Hot.findOne(),
-        "categories": yield MODEL.Category.find()
+        "categories": yield MODEL.Category.find(),
+        "topics": yield MODEL.Topic.find().sort({"sequence": 1})
     };
 });
 
