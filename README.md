@@ -152,7 +152,7 @@ response: {
 ### 首页更多视频
 ```javascript
 # 获取首页下方用户可能感兴趣的视频
-GET /more?topic=1 // topic为用户当前所选专题
+GET /more?topic=1 // topic为用户当前所选专题的_id
 
 response:[ //大概10-15个
     {               
