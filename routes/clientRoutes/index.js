@@ -11,6 +11,12 @@
 const Router = require('koa-router');
 
 /**
+ * Services.
+ */
+
+const alidayuServs = require('../../services/alidayuServs');
+
+/**
  * Controllers.
  */
 
@@ -41,6 +47,52 @@ router.use(require('./rabateRoutes').routes());
  */
 
 /**
+ * 获取验证码
+ * POST /vcode
+ * Request:
+ *      Query String:
+ *          phone = String //手机号
+ * Response:
+ *      Body:
+ *          {
+ *              "status": "ok"||"error", //API执行状态
+ *              "message": String //如果status为error，这里会有错误信息
+ *          }
+ *
+ */
+router.post('vcode', function *() {
+    const phoneRegex = /^1\d{10}$/;
+    if (!phoneRegex.test(this.request.query.phone)) {
+        this.body = {
+            "status": "error",
+            "message": "看起来不像是手机号哎～"
+        };
+    } else {
+        let result = yield MODEL.Vcode.findOne({
+            "phone": this.request.query.phone,
+            "createdAt": {"$gt": Date.now() - CONFIG.vcode.resendInterval}
+        });
+        if (result) {
+            this.body = {
+                "status": "error",
+                "message": "请等一会儿再发"
+            };
+        } else {
+            let vcode = new MODEL.Vcode({"phone": this.request.query.phone});
+            yield vcode.save();
+            alidayuServs.sendVcode({
+                "phone": vcode.phone,
+                "code": vcode.code
+            });
+            this.body = {
+                "status": "ok",
+                "message": "ok"
+            };
+        }
+    }
+});
+
+/**
  * 登录或注册
  * POST /login
  * Request:
@@ -57,11 +109,15 @@ router.use(require('./rabateRoutes').routes());
  *          }
  */
 router.post('login', tokenMidw.refresh(), function*() {
-    let result = MODEL.Vcode.findOne({"phone": this.request.query.phone, "code": this.request.query.code});
+    let result = yield MODEL.Vcode.findOne({
+        "phone": this.request.query.phone,
+        "code": this.request.query.code,
+        "createdAt": {"$gt": Date.now() - CONFIG.vcode.effectiveTime}
+    });
     if (result == null) {
         this.body = {
             "status": "error",
-            "message": "验证码错误"
+            "message": "验证码错啦或过期啦～"
         };
     } else {
         this.body = {

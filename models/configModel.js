@@ -32,7 +32,11 @@ let configSchema = new Schema({
         "templates": {
             "serverFault": String,//The template id
         }
-    }//SMS service.
+    },//SMS service.
+    "vcode": {
+        "effectiveTime": Number,//The effective time of verification code in millisecond.
+        "resendInterval": Number,//The resend interval time of verification code in millisecond.
+    }
 }, {strict: false});
 
 function forbidden() {
