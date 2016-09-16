@@ -11,8 +11,10 @@
 const Router = require('koa-router');
 
 /**
- * Controllers.
+ * Middlewares.
  */
+
+const tokenMidw = require("../../middlewares/tokenMidw");
 
 
 /**
@@ -36,6 +38,38 @@ const router = new Router();
  */
 router.get('video/:videoId', function *() {
     this.body = yield MODEL.Video.findOne({"_id": this.params.videoId}).populate("doctor", "related");
+});
+
+/**
+ * 点击想做
+ * POST /video/:videoId/like
+ * Request:
+ *      Param:
+ *          videoId 视频的_id
+ *      Header:
+ *          Authorization: Token //客户端本地记录的Token
+ * Response:
+ *      Body:
+ *          {Video Object}
+ */
+router.post('video/:videoId/like', tokenMidw.verify(), function *() {
+    let existsWish = yield MODEL.Wishlist.findOne({
+        "userId": this.state.user.id,
+        "wishType": "video",
+        "wishId": this.params.videoId
+    });
+    let video = yield MODEL.Video.findOne({"_id": this.params.videoId}).populate("doctor", "related");
+    if (existsWish == null) {
+        let wishlist = new MODEL.Wishlist({
+            "userId": this.state.user.id,
+            "wishType": "video",
+            "wishId": this.params.videoId
+        });
+        yield wishlist.save();
+        video.like += 1;
+        yield video.save();
+    }
+    this.body = video;
 });
 
 /**
