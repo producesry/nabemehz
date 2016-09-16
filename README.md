@@ -403,9 +403,20 @@ response: {} // 返回结果同上面GET /live,前端逻辑可以直接在前端
 POST /rebate/ticket
 POST /rebate/before
 POST /rebate/after
+```
+
+上面三个API用于上传图片，全部上传完后客户端调用如下API，将上面三个API返回的URL填入：
+```javascript
+POST /rebate
 
 header://request的header
     Authorization: token//用户token
+
+request:{
+    "ticket": String,//图片地址
+    "before": String,//图片地址
+    "after": String//图片地址
+}
 
 response: {
     "status": "ok", // or "error"
