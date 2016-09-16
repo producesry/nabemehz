@@ -16,6 +16,12 @@ let videoSchema = new Schema({
     "pic": String, // 图片链接
     "title": String, // 标题
     "like": Number, // 想做的数量
+    "label": [
+        {
+            "type": ObjectId,
+            "ref": "Label"
+        }
+    ],
     "doctor": {
         "type": ObjectId,
         "ref": "Doctor"
