@@ -18,7 +18,8 @@ let rebateSchema = new Schema({
             "waiting",//未处理
             "processing",//沟通中
             "done"//已处理
-        ]
+        ],
+        "default": "waiting"
     },//处理状态
     "user": {
         "type": ObjectId,
