@@ -398,14 +398,7 @@ response: {} // 返回结果同上面GET /live,前端逻辑可以直接在前端
 ```
 
 ### 返利（上传图片）
-```javascript
-// TODO: 还没做完
-POST /rebate/ticket
-POST /rebate/before
-POST /rebate/after
-```
-
-上面三个API用于上传图片，全部上传完后客户端调用如下API，将上面三个API返回的URL填入：
+客户端使用七牛的SDK上传图片，全部上传完后客户端调用如下API，上传的图片URL填入：
 ```javascript
 POST /rebate
 
@@ -413,9 +406,9 @@ header://request的header
     Authorization: token//用户token
 
 request:{
-    "ticket": String,//图片地址
-    "before": String,//图片地址
-    "after": String//图片地址
+    "ticket": String,//小票地址
+    "before": String,//整形前地址
+    "after": String//整形后地址
 }
 
 response: {
