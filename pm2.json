@@ -1,0 +1,14 @@
+[
+  {
+    "name": "nabemehz",
+    "script": "service.js",
+    "exec_mode": "cluster",
+    "instances": 1,
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "watch": false,
+    "env": {
+      "NODE_PORT": 8000,
+      "NODE_ENV": "production"
+    }
+  }
+]
