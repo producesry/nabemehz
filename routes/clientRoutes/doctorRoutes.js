@@ -39,6 +39,19 @@ router.get('doctor/:doctorId', function *() {
 });
 
 /**
+ * 获取认证医生列表
+ * GET /doctors
+ * Response:
+ *      Body:
+ *          [
+ *              {Doctor Object}
+ *          ]
+ */
+router.get('doctors', function *() {
+    this.body = yield MODEL.Doctor.find().limit(CONFIG.doctor.listLimit);
+});
+
+/**
  * Define routes end.
  */
 

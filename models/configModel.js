@@ -37,6 +37,9 @@ let configSchema = new Schema({
         "effectiveTime": Number,//The effective time of verification code in millisecond.
         "resendInterval": Number,//The resend interval time of verification code in millisecond.
         "codeLength": Number,//The length of code.
+    },
+    "doctor": {
+        "listLimit": Number//获取医生列表最多显示多少个医生
     }
 }, {strict: false});
 
