@@ -47,6 +47,34 @@ router.use(require('./rabateRoutes').routes());
  */
 
 /**
+ * 获取首页最上banner，最左上搜索热词（项目热词+热门医生），【查看项目】的项目分类信息，专题信息
+ * GET /main
+ * Response:
+ *      Body:
+ *          {
+ *              "banners": [
+ *                  {Banner Object}
+ *              ],
+ *              "search": {
+ *                  "hot" :{
+ *                      "words": [String],
+ *                      "doctors": [String]
+ *                  }
+ *              }
+ *              "categories": [
+ *                  {Category Object}
+ *              ]
+ *          }
+ */
+router.get('main', function *() {
+    this.body = {
+        "banners": yield MODEL.Banner.find(),
+        "search": yield MODEL.Hot.findOne(),
+        "categories": yield MODEL.Category.find()
+    };
+});
+
+/**
  * 获取验证码
  * POST /vcode
  * Request:
