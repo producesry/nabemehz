@@ -4,6 +4,7 @@
 CMS交互图：[Modao](https://modao.cc/app/b1f37e8fabf352c06603dc6d50d9531b144eea57)
 
 服务器：139.129.211.175 Yrs20160504
+七牛：3er.com.cn@gmail.com Yrs20160504
 
 ## Action
 * 图片大小未确定，全是示例，需要开发给建议
