@@ -1,7 +1,7 @@
 # nabemehz
 
-移动端交互图：[Modao](https://modao.cc/app/4f53762a751f4fed80f093078c01645a38447f5e)
-CMS交互图：[Modao](https://modao.cc/app/b1f37e8fabf352c06603dc6d50d9531b144eea57)
+移动端交互图：[Modao](https://modao.cc/app/3feaa09d3c7ba548ee06363c68a45addf9436e5b)
+CMS交互图：[Modao](https://modao.cc/app/39d0b54ccbfd7491e3c4bc33c9eef6ada6a0d4bb)
 
 服务器：139.129.211.175 Yrs20160504
 七牛：3er.com.cn@gmail.com Yrs20160504
