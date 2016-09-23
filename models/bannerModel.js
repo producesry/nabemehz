@@ -1,5 +1,5 @@
 /**
- * Model for banner.
+ * Model for banner（主页banner）.
  */
 
 'use strict';

@@ -1,5 +1,5 @@
 /**
- * Model for hot word.
+ * Model for hot word（热词）.
  */
 
 'use strict';

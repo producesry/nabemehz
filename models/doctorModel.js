@@ -1,5 +1,5 @@
 /**
- * Model for doctor.
+ * Model for doctor（医生）.
  */
 
 'use strict';
@@ -14,9 +14,9 @@ const ObjectId = Schema.Types.ObjectId;
 let doctorSchema = new Schema({
     "avatar": String,//头像URL
     "name": String,//姓名
-    "nick": String, // 行业外号
-    "title": String, // 职称
-    "hospital": String, // 医院名称
+    "nick": String, //花名
+    "title": String, // 头衔
+    "hospital": String, // 机构
     "tel": String, // 联系电话（座机或手机）
     "address": String, // 医院地址
     "experience": String, // 执业经历
@@ -31,7 +31,16 @@ let doctorSchema = new Schema({
             "type": ObjectId,
             "ref": "Video"
         }
-    ]
+    ],
+    "location": {
+        "province": String,//省
+        "city": String//市
+    },
+    "case": {
+        "before": String,//整形前
+        "after": String,//整形后
+        "keywords": [{type: String}]//关键词
+    }//案例
 });
 
 global.MODEL.Doctor = mongoose.model('Doctor', doctorSchema);

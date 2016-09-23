@@ -1,5 +1,5 @@
 /**
- * Model for video.
+ * Model for video（视频）.
  */
 
 'use strict';
@@ -13,8 +13,8 @@ const ObjectId = Schema.Types.ObjectId;
 
 let videoSchema = new Schema({
     "url": String, // 视频链接
-    "pic": String, // 图片链接
-    "title": String, // 标题
+    "pic": String, // 封面链接
+    "title": String, // 视频名称
     "like": Number, // 想做的数量
     "label": [
         {

@@ -1,5 +1,5 @@
 /**
- * Model for topic.
+ * Model for topic（专题|系列）.
  */
 
 'use strict';
@@ -12,17 +12,19 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 let topicSchema = new Schema({
-    "sequence": Number, //排列序号
-    "header": {
-        "pic": String, // 图片的URL
-        "video": String, // 视频URL，可能没有,如果没有就不显示播放按钮
-    },
+    "sequence": Number, //排列序号,
+    "title": String,//系列标题
+    "pic": String, // 封面链接
+    "introductionVideo": {
+        "type": ObjectId,
+        "ref": "Video"
+    },//介绍视频
     "videos": [
         {
             "type": ObjectId,
             "ref": "Video"
         }
-    ]
+    ]//包含的视频
 });
 
 global.MODEL.Topic = mongoose.model('Topic', topicSchema);

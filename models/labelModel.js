@@ -1,5 +1,5 @@
 /**
- * Model for label.
+ * Model for label（标签）.
  */
 
 'use strict';

@@ -1,5 +1,5 @@
 /**
- * Model for live.
+ * Model for live（直播）.
  */
 
 'use strict';
@@ -19,14 +19,14 @@ let liveSchema = new Schema({
                 return new ObjectId()
             }
         },
-        "pic": String,//图片地址
+        "pic": String,//图片链接
         "url": String,//"第三方直播链接",根据链接打开web浏览器,
         "title": String,//标题
         "like": Number, // 想看人数
         "doctor": {
             "type": ObjectId,
             "ref": "Doctor"
-        },
+        },//医生
     },
     "preview": [
         {
@@ -34,8 +34,8 @@ let liveSchema = new Schema({
             "video": {
                 "type": ObjectId,
                 "ref": "Video"
-            },
-            "watchedCount": Number//有多少人看过
+            },//视频
+            "watchedCount": Number//观看人数
         }
     ]
 });

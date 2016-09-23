@@ -1,5 +1,5 @@
 /**
- * Model for rebate.
+ * Model for rebate（返利）.
  */
 
 'use strict';

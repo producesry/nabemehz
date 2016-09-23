@@ -47,6 +47,17 @@ router.use(require('./rabateRoutes').routes());
  */
 
 /**
+ * 获取启动页图片链接
+ * GET /bootstrap
+ * Response:
+ *      Body:
+ *          {Bootstrap Object}
+ */
+router.get('main', function *() {
+    this.body = yield MODEL.Bootstrap.findOne();
+});
+
+/**
  * 获取首页最上banner，最左上搜索热词（项目热词+热门医生），【查看项目】的项目分类信息，专题信息
  * GET /main
  * Response:
