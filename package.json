@@ -40,6 +40,7 @@
     "lodash": "^4.14.1",
     "moment": "^2.14.1",
     "mongoose": "^4.5.8",
+    "pluralize": "^3.0.0",
     "request": "^2.74.0",
     "require-dir": "^0.3.0",
     "topSdk": "git+https://github.com/guanghetv/topSdk-Node.git#0.0.1"
