@@ -48,7 +48,7 @@ exports.sendServerFaultMessage = function () {
  * Send verification code.
  * @param {Object} params - {"phone": String, "code": String}
  */
-exports.sendVcode = function *(params) {
+exports.sendVcode = function (params) {
     let nextparams = {
         "rec_num": params.phone/*短信接收号码。支持单个或多个手机号码，传入号码为11位手机号码，不能加0或+86。群发短信需传入多个号码，以英文逗号分隔，一次调用最多传入200个号码。示例：18600000000,13911111111,13322222222*/,
         "sms_free_sign_name": CONFIG.alidayu.signature/*短信签名，传入的短信签名必须是在阿里大鱼“管理中心-短信签名管理”中的可用签名。如“阿里大鱼”已在短信签名管理中通过审核，则可传入”阿里大鱼“（传参时去掉引号）作为短信签名。短信效果示例：【阿里大鱼】欢迎使用阿里大鱼服务。*/,
