@@ -28,13 +28,13 @@ const router = new Router({
     prefix: 'editor/'
 });
 
-// router.use(tokenMidw.verify(), function *(next) {
-//     if (this.state.user.role !== 'editor') {
-//         this.status = 403;
-//     } else {
-//         yield next;
-//     }
-// });
+router.use(tokenMidw.verify(), function *(next) {
+    if (this.state.user.role !== 'editor') {
+        this.status = 403;
+    } else {
+        yield next;
+    }
+});
 
 /**
  * Including routes.
