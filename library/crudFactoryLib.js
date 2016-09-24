@@ -31,7 +31,7 @@ module.exports = function (modelName) {
      * GET item/:itemId
      * Request:
      *      Query String:
-     *          population = String//Property names which are split by ','
+     *          population = String//Property names are split by ','
      *      Param:
      *          itemId String//The _id of this item.
      * Response:
