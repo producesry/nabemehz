@@ -29,17 +29,31 @@ module.exports = function (modelName) {
     /**
      * Get one item.
      * GET item/:itemId
+     * Request:
+     *      Query String:
+     *          population = String//Property names which are split by ','
+     *      Param:
+     *          itemId String//The _id of this item.
      * Response:
      *      Body:
      *          {Item Object}
      */
     this.router.get(region.modelName.toLowerCase() + '/:' + region.modelName.toLowerCase() + 'Id', function *() {
-        this.body = yield MODEL[region.modelName].findById(this.params[region.modelName.toLowerCase() + 'Id']);
+        if (this.request.query.population) {
+            let populationArray = this.request.query.population.split(',');
+            this.body = yield MODEL[region.modelName].findById(this.params[region.modelName.toLowerCase() + 'Id']).populate(populationArray);
+        } else {
+            this.body = yield MODEL[region.modelName].findById(this.params[region.modelName.toLowerCase() + 'Id']);
+        }
     });
 
     /**
      * Get some item.
      * GET items
+     * Request:
+     *      Query String:
+     *          property = String//Any property of this item or sub-document.
+     *          population = String//Property names which are split by ','
      * Response:
      *      Body:
      *          [
@@ -47,7 +61,18 @@ module.exports = function (modelName) {
      *          ]
      */
     this.router.get(Pluralize(region.modelName.toLowerCase()), function *() {
-        this.body = yield MODEL[region.modelName].find();
+        let query;
+        {
+            query = JSON.parse(JSON.stringify(this.request.query));
+            delete query.population;
+        }
+
+        if (this.request.query.population) {
+            let populationArray = this.request.query.population.split(',');
+            this.body = yield MODEL[region.modelName].find(query).populate(populationArray);
+        } else {
+            this.body = yield MODEL[region.modelName].find(query);
+        }
     });
 
     /**
@@ -87,6 +112,8 @@ module.exports = function (modelName) {
      * Modify one item.
      * PUT item/:itemId
      * Request:
+     *      Param:
+     *          itemId String//The _id of this item.
      *      Body:
      *          {Item Object}
      * Response:
@@ -104,6 +131,9 @@ module.exports = function (modelName) {
     /**
      * Delete one item.
      * DELETE item/:itemId
+     * Request:
+     *      Param:
+     *          itemId String//The _id of this item.
      * Response:
      *      Body:
      *          {Item Object}
