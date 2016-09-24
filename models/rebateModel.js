@@ -23,11 +23,21 @@ let rebateSchema = new Schema({
     },//处理状态
     "user": {
         "type": ObjectId,
-        "ref": "User"
+        "ref": "User",
+        "required": true
     },
-    "ticket": String,//小票图片地址
-    "before": String,//整形前图片地址
-    "after": String//整形后图片地址
+    "ticket": {
+        "type": String,
+        "required": true
+    },//小票图片地址
+    "before": {
+        "type": String,
+        "required": true
+    },//整形前图片地址
+    "after": {
+        "type": String,
+        "required": true
+    }//整形后图片地址
 });
 
 global.MODEL.Rebate = mongoose.model('Rebate', rebateSchema);

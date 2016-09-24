@@ -12,15 +12,22 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 let wishlistSchema = new Schema({
-    "userId": ObjectId,
+    "userId": {
+        "type": ObjectId,
+        "required": true
+    },
     "wishType": {
         "type": String,
         "enum": [
             "video",
             "live"
-        ]
+        ],
+        "required": true
     },
-    "wishId": ObjectId
+    "wishId": {
+        "type": ObjectId,
+        "required": true
+    }
 });
 
 global.MODEL.Wishlist = mongoose.model('Wishlist', wishlistSchema);

@@ -12,10 +12,22 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 let videoSchema = new Schema({
-    "url": String, // 视频链接
-    "pic": String, // 封面链接
-    "title": String, // 视频名称
-    "like": Number, // 想做的数量
+    "url": {
+        "type": String,
+        "required": true
+    }, // 视频链接
+    "pic": {
+        "type": String,
+        "required": true
+    }, // 封面链接
+    "title": {
+        "type": String,
+        "required": true
+    }, // 视频名称
+    "like": {
+        "type": Number,
+        "default": 0
+    }, // 想做的数量
     "label": [
         {
             "type": ObjectId,

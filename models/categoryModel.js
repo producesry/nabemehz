@@ -12,8 +12,14 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 let categorySchema = new Schema({
-    "icon": String,//图标URL
-    "name": String,//名称
+    "icon": {
+        "type":String,
+        "required":true
+    },//图标URL
+    "name": {
+        "type":String,
+        "required":true
+    },//名称
     "label": [
         {
             "type": ObjectId,

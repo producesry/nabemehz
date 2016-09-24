@@ -8,13 +8,19 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 var provinceSchema = new Schema({
-    name: String,
-    cities: [
+    "name": {
+        "type": String,
+        "required": true
+    },
+    "cities": [
         {
-            name: String
+            "name": {
+                "type": String,
+                "required": true
+            }
         }
     ]
-}, {versionKey: false});
+}, {"versionKey": false});
 
 global.MODEL.Province = mongoose.model('Province', provinceSchema);
 

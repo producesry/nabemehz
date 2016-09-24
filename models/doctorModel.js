@@ -13,19 +13,37 @@ const ObjectId = Schema.Types.ObjectId;
 
 let doctorSchema = new Schema({
     "avatar": String,//头像URL
-    "name": String,//姓名
+    "name": {
+        "type": String,
+        "required": true
+    },//姓名
     "nick": String, //花名
-    "title": String, // 头衔
-    "hospital": String, // 机构
-    "tel": String, // 联系电话（座机或手机）
+    "title": {
+        "type": String,
+        "required": true
+    }, // 头衔
+    "hospital": {
+        "type": String,
+        "required": true
+    }, // 机构
+    "tel": {
+        "type": String,
+        "required": true
+    }, // 联系电话（座机或手机）
     "address": String, // 医院地址
-    "experience": String, // 执业经历
+    "experience": {
+        "type": String,
+        "required": true
+    }, // 执业经历
     "speciality": [
         {
             "type": String
         }
     ],//专长
-    "rebate": Boolean, // 有些医生能谈下返利，有些不同，返利具体数额视医生决定
+    "rebate": {
+        "type": Boolean,
+        "required": true
+    }, // 有些医生能谈下返利，有些不同，返利具体数额视医生决定
     "related": [ // 相关视频 0-5个,可能没有
         {
             "type": ObjectId,
@@ -33,8 +51,14 @@ let doctorSchema = new Schema({
         }
     ],
     "location": {
-        "province": String,//省
-        "city": String//市
+        "province": {
+            "type": String,
+            "required": true
+        },//省
+        "city": {
+            "type": String,
+            "required": true
+        }//市
     },
     "case": {
         "before": String,//整形前

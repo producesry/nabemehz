@@ -13,8 +13,14 @@ const ObjectId = Schema.Types.ObjectId;
 
 let topicSchema = new Schema({
     "sequence": Number, //排列序号,
-    "title": String,//系列标题
-    "pic": String, // 封面链接
+    "title": {
+        "type": String,
+        "required": true
+    },//系列标题
+    "pic": {
+        "type": String,
+        "required": true
+    }, // 封面链接
     "introductionVideo": {
         "type": ObjectId,
         "ref": "Video"

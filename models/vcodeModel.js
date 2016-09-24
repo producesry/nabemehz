@@ -11,7 +11,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let vcodeSchema = new Schema({
-    "phone": String,//手机号
+    "phone": {
+        "type": String,
+        "required": true
+    },//手机号
     "code": {
         "type": String,
         "default": function () {

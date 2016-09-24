@@ -17,9 +17,13 @@ let labelSchema = new Schema({
             "project",//项目
             "bodyParts",//部位
             "series"//系列
-        ]
+        ],
+        "required": true
     },//标签类型
-    "name": String//标签名
+    "name": {
+        "type": String,
+        "required": true
+    }//标签名
 });
 
 global.MODEL.Label = mongoose.model('Label', labelSchema);

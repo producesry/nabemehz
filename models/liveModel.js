@@ -19,23 +19,43 @@ let liveSchema = new Schema({
                 return new ObjectId()
             }
         },
-        "pic": String,//图片链接
-        "url": String,//"第三方直播链接",根据链接打开web浏览器,
-        "title": String,//标题
-        "like": Number, // 想看人数
+        "pic": {
+            "type": String,
+            "required": true
+        },//图片链接
+        "url": {
+            "type": String,
+            "required": true
+        },//"第三方直播链接",根据链接打开web浏览器,
+        "title": {
+            "type": String,
+            "required": true
+        },//标题
+        "like": {
+            "type": Number,
+            "default": 0
+        }, // 想看人数
         "doctor": {
             "type": ObjectId,
-            "ref": "Doctor"
+            "ref": "Doctor",
+            "required": true
         },//医生
     },
     "preview": [
         {
-            "phase": Number,//第几期
+            "phase": {
+                "type": Number,
+                "required": true
+            },//第几期
             "video": {
                 "type": ObjectId,
-                "ref": "Video"
+                "ref": "Video",
+                "required": true
             },//视频
-            "watchedCount": Number//观看人数
+            "watchedCount": {
+                "type": Number,
+                "default": 0
+            }//观看人数
         }
     ]
 });

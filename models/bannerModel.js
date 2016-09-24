@@ -12,7 +12,10 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 let bannerSchema = new Schema({
-    "pic": String,//The URL of image.
+    "pic": {
+        "type": String,
+        "required": true
+    },//The URL of image.
     "bannerType": {
         "type": String,
         "enum": [
