@@ -21,5 +21,5 @@ exports.generate = function generateToken(user) {
 };
 
 exports.verify = function () {
-    return jwt({secret: CONFIG.secret});
+    return jwt({secret: CONFIG.jwt.secret});
 };
