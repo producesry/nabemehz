@@ -37,7 +37,7 @@ const router = new Router();
  *          {Video Object}
  */
 router.get('video/:videoId', function *() {
-    this.body = yield MODEL.Video.findOne({"_id": this.params.videoId}).populate("doctor", "related");
+    this.body = yield MODEL.Video.findOne({"_id": this.params.videoId}).populate("doctor related");
 });
 
 /**
@@ -58,7 +58,7 @@ router.post('video/:videoId/like', tokenMidw.verify(), function *() {
         "wishType": "video",
         "wishId": this.params.videoId
     });
-    let video = yield MODEL.Video.findOne({"_id": this.params.videoId}).populate("doctor", "related");
+    let video = yield MODEL.Video.findOne({"_id": this.params.videoId}).populate("doctor related");
     if (existsWish == null) {
         let wishlist = new MODEL.Wishlist({
             "userId": this.state.user.id,

@@ -31,7 +31,7 @@ module.exports = function (modelName) {
      * GET item/:itemId
      * Request:
      *      Query String:
-     *          population = String//Property names are split by ','
+     *          population = String//Property names are split by space
      *      Param:
      *          itemId String//The _id of this item.
      * Response:
@@ -53,7 +53,7 @@ module.exports = function (modelName) {
      * Request:
      *      Query String:
      *          property = String//Any property of this item or sub-document.
-     *          population = String//Property names which are split by ','
+     *          population = String//Property names which are split by space
      * Response:
      *      Body:
      *          [

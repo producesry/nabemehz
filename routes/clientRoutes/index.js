@@ -53,7 +53,7 @@ router.use(require('./rabateRoutes').routes());
  *      Body:
  *          {Bootstrap Object}
  */
-router.get('main', function *() {
+router.get('bootstrap', function *() {
     this.body = yield MODEL.Bootstrap.findOne();
 });
 

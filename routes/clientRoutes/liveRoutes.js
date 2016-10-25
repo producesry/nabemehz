@@ -33,7 +33,7 @@ const router = new Router();
  *          {Live Object}
  */
 router.get('live', function *() {
-    this.body = yield MODEL.Live.findOne().populate('next.doctor', 'preview.video');
+    this.body = yield MODEL.Live.findOne().populate('next.doctor preview.video');
 });
 
 /**
@@ -54,7 +54,7 @@ router.post('live/:liveId/like', tokenMidw.verify(), function *() {
         "wishType": "live",
         "wishId": this.params.liveId
     });
-    let live = yield MODEL.Live.findOne().populate('next.doctor', 'preview.video');
+    let live = yield MODEL.Live.findOne().populate('next.doctor preview.video');
     if (this.params.liveId == live.next._id.toString()) {
         if (existsWish == null) {
             let wishlist = new MODEL.Wishlist({

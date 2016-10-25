@@ -15,9 +15,7 @@ let liveSchema = new Schema({
     "next": {
         "_id": {
             "type": ObjectId,
-            "default": function () {
-                return new ObjectId()
-            }
+            "default": ObjectId
         },
         "pic": {
             "type": String,
