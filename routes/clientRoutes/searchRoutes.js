@@ -42,6 +42,7 @@ const router = new Router();
  *          }
  */
 router.post('search/word/:word', function *() {
+    let labelIds = yield MODEL.Label.distinct('_id', {"name": new RegExp(this.params.word)});
     this.body = {
         "doctors": yield MODEL.Doctor.find({
             "$or": [
@@ -49,7 +50,7 @@ router.post('search/word/:word', function *() {
                 {"speciality": this.params.word}
             ]
         }),
-        "videos": yield MODEL.Video.find({"label": this.params.word})
+        "videos": yield MODEL.Video.find({"label": {"$in": labelIds}})
     };
 });
 
