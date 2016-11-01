@@ -58,7 +58,11 @@ let doctorSchema = new Schema({
         "city": {
             "type": String,
             "required": true
-        }//市
+        },//市
+        "gps": {
+            "longitude": String,//经度
+            "latitude": String//纬度
+        }
     },
     "case": {
         "before": String,//整形前
