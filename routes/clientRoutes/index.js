@@ -85,7 +85,7 @@ router.get('main', function *() {
         "banners": yield MODEL.Banner.find(),
         "search": yield MODEL.Hot.findOne(),
         "categories": yield MODEL.Category.find(),
-        "topics": yield MODEL.Topic.find().sort({"sequence": 1})
+        "topics": yield MODEL.Topic.find().populate("videos").sort({"sequence": 1})
     };
 });
 
