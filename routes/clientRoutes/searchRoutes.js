@@ -43,6 +43,27 @@ const router = new Router();
  */
 router.post('search/word/:word', function *() {
     let labelIds = yield MODEL.Label.distinct('_id', {"name": new RegExp(this.params.word)});
+
+    let categoryLabelArray = yield MODEL.Category.distinct('label', {"name": new RegExp(this.params.word)});
+    let categoryLabels = [];
+    /**
+     * Fast unique.
+     */
+    {
+        let tempObject = {};
+
+        for (let labelId of categoryLabelArray) {
+            tempObject[labelId.toString()] = 0;
+        }
+        for (let labelId of labelIds) {
+            tempObject[labelId.toString()] = 0;
+        }
+
+        for (let labelId in tempObject) {
+            categoryLabels.push(labelId);
+        }
+    }
+
     this.body = {
         "doctors": yield MODEL.Doctor.find({
             "$or": [
@@ -50,7 +71,7 @@ router.post('search/word/:word', function *() {
                 {"speciality": this.params.word}
             ]
         }),
-        "videos": yield MODEL.Video.find({"label": {"$in": labelIds}})
+        "videos": yield MODEL.Video.find({"label": {"$in": categoryLabels}})
     };
 });
 
