@@ -9,6 +9,9 @@
  */
 
 const Router = require('koa-router');
+const Qiniu = require('qiniu');
+Qiniu.conf.ACCESS_KEY = CONFIG.qiniu.accessKey;
+Qiniu.conf.SECRET_KEY = CONFIG.qiniu.secretKey;
 
 /**
  * Services.
@@ -196,6 +199,29 @@ router.post('login', tokenMidw.refresh(), function*() {
             }
         }
     }
+});
+
+/**
+ * 获取七牛上传Token
+ * GET /upToken
+ * Request:
+ *      Header:
+ *          Authorization: Token //客户端本地记录的登陆Token
+ * Response:
+ *      Body:
+ *          {
+ *              "upToken": String//七牛上传用的Token
+ *          }
+ */
+router.get('upToken', tokenMidw.verify(), function *() {
+    let putPolicy = new Qiniu.rs.PutPolicy(CONFIG.qiniu.bucketName);
+    // putPolicy.callbackUrl = callbackUrl;
+    // putPolicy.callbackBody = callbackBody;
+    // putPolicy.returnUrl = returnUrl;
+    // putPolicy.returnBody = returnBody;
+    // putPolicy.asyncOps = asyncOps;
+    // putPolicy.expires = expires;
+    this.body = {"upToken": putPolicy.token()};
 });
 
 /**

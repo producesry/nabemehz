@@ -40,6 +40,11 @@ let configSchema = new Schema({
     },
     "doctor": {
         "listLimit": Number//获取医生列表最多显示多少个医生
+    },
+    "qiniu": {
+        "bucketName": String,//存储返利照片的空间
+        "accessKey": String,//七牛的access key
+        "secretKey": String,//七牛的secret key
     }
 }, {strict: false});
 

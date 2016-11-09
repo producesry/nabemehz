@@ -188,4 +188,16 @@
  *              {Video Object}
  *          ]
  */
+/**
+ * 获取七牛上传Token
+ * GET /upToken
+ * Request:
+ *      Header:
+ *          Authorization: Token //客户端本地记录的登陆Token
+ * Response:
+ *      Body:
+ *          {
+ *              "upToken": String//七牛上传用的Token
+ *          }
+ */
 ```

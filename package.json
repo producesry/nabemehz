@@ -41,6 +41,7 @@
     "moment": "^2.15.2",
     "mongoose": "^4.6.5",
     "pluralize": "^3.0.0",
+    "qiniu": "^6.1.13",
     "request": "^2.76.0",
     "require-dir": "^0.3.1",
     "topSdk": "git+https://github.com/guanghetv/topSdk-Node.git#0.0.1"
