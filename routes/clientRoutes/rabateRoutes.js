@@ -40,7 +40,7 @@ const router = new Router();
  */
 router.post('rebate', tokenMidw.verify(), function *() {
     this.body = {};
-    let rebate = new NODEL.Rebate({
+    let rebate = new MODEL.Rebate({
         "user": this.state.user.id,
         "ticket": this.request.body.ticket,//小票图片地址
         "before": this.request.body.before,//整形前图片地址
