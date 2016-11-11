@@ -12,6 +12,7 @@ const Router = require('koa-router');
 const Qiniu = require('qiniu');
 Qiniu.conf.ACCESS_KEY = CONFIG.qiniu.accessKey;
 Qiniu.conf.SECRET_KEY = CONFIG.qiniu.secretKey;
+const paginate = require('koa-pagination').default;
 
 /**
  * Services.
@@ -96,17 +97,25 @@ router.get('main', function *() {
  * 获取首页下方用户可能感兴趣的视频
  * GET /more
  * Request:
+ *      Headers:
+ *          Range: items=<start index>-<end index>//End index can be '*' means 'to the end'.
  *      Query String:
  *          topic = String //选定主题的_id
  * Response:
+ *      Headers:
+ *          Content-Range: items <start index>-<end index>/<total number>
  *      Body:
  *          [
  *              {Video Object}
  *          ]
  */
-router.get('more', function *() {
-    let topic = yield MODEL.Topic.findOne({"_id": this.request.query.topic}).populate("videos");
-    this.body = topic.videos;
+router.get('more', paginate(), function *() {
+    let topic = yield MODEL.Topic.findOne({"_id": this.request.query.topic});
+    this.body = yield MODEL.Video.find({"_id": {"$in": topic.videos}})
+        .skip(this.pagination.offset)
+        .limit(this.pagination.limit)
+        .lean();
+    this.pagination.length = yield MODEL.Video.count({"_id": {"$in": topic.videos}});
 });
 
 /**

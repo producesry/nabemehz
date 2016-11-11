@@ -35,9 +35,13 @@
  * 获取首页下方用户可能感兴趣的视频
  * GET /more
  * Request:
+ *      Headers:
+ *          Range: items=<start index>-<end index>//End index can be '*' means 'to the end'.
  *      Query String:
  *          topic = String //选定主题的_id
  * Response:
+ *      Headers:
+ *          Content-Range: items <start index>-<end index>/<total number>
  *      Body:
  *          [
  *              {Video Object}
